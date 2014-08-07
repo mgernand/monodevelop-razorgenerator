@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{7DBEB09D-BB9F-4D92-A141-A009135475EF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{374FE390-0FF0-4354-A172-1998427375A2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MonoDevelop.RazorGenerator</RootNamespace>
+    <AssemblyName>MonoDevelop.RazorGenerator</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <DocumentationFile>bin\Release\MonoDevelop.RazorGenerator.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Addins">
+      <Package>C:\Program Files (x86)\Xamarin Studio\bin\Mono.Addins.dll</Package>
+    </Reference>
+    <Reference Include="MonoDevelop.Core">
+      <Package>C:\Program Files (x86)\Xamarin Studio\bin\MonoDevelop.Core.dll</Package>
+    </Reference>
+    <Reference Include="MonoDevelop.Ide">
+      <Package>C:\Program Files (x86)\Xamarin Studio\bin\MonoDevelop.Ide.dll</Package>
+    </Reference>
+    <Reference Include="Mono.TextEditor">
+      <Package>C:\Program Files (x86)\Xamarin Studio\bin\Mono.TextEditor.dll</Package>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory">
+      <Package>C:\Program Files (x86)\Xamarin Studio\bin\ICSharpCode.NRefactory.dll</Package>
+    </Reference>
+    <Reference Include="gtk-sharp" />
+    <Reference Include="glib-sharp" />
+    <Reference Include="gdk-sharp" />
+    <Reference Include="pango-sharp" />
+    <Reference Include="Mono.Cairo" />
+    <Reference Include="MonoDevelop.DesignerSupport, Version=2.6.0.0, Culture=neutral">
+      <Package>C:\Program Files (x86)\Xamarin Studio\AddIns\MonoDevelop.DesignerSupport\MonoDevelop.DesignerSupport.dll</Package>
+    </Reference>
+    <Reference Include="RazorGenerator.Core">
+      <HintPath>..\..\External\RazorGenerator.Core\bin\Release\RazorGenerator.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\AddinInfo.cs" />
+    <Compile Include="RazorCodeGenerator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Manifest.addin.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="v1\" />
+    <Folder Include="v2\" />
+    <Folder Include="v3\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\External\RazorGenerator.Core.v1\bin\Release\RazorGenerator.Core.v1.dll">
+      <Link>v1\RazorGenerator.Core.v1.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\External\RazorGenerator.Core.v1\bin\Release\System.Web.Mvc.dll">
+      <Link>v1\System.Web.Mvc.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\External\RazorGenerator.Core.v1\bin\Release\System.Web.Razor.dll">
+      <Link>v1\System.Web.Razor.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\External\RazorGenerator.Core.v1\bin\Release\System.Web.WebPages.dll">
+      <Link>v1\System.Web.WebPages.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\External\RazorGenerator.Core.v1\bin\Release\System.Web.WebPages.Razor.dll">
+      <Link>v1\System.Web.WebPages.Razor.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\External\RazorGenerator.Core.v2\bin\Release\RazorGenerator.Core.V2.dll">
+      <Link>v2\RazorGenerator.Core.V2.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\External\RazorGenerator.Core.v2\bin\Release\System.Web.Mvc.dll">
+      <Link>v2\System.Web.Mvc.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\External\RazorGenerator.Core.v2\bin\Release\System.Web.Razor.dll">
+      <Link>v2\System.Web.Razor.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\External\RazorGenerator.Core.v2\bin\Release\System.Web.WebPages.dll">
+      <Link>v2\System.Web.WebPages.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\External\RazorGenerator.Core.v2\bin\Release\System.Web.WebPages.Razor.dll">
+      <Link>v2\System.Web.WebPages.Razor.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\External\RazorGenerator.Core.v3\bin\Release\RazorGenerator.Core.V3.dll">
+      <Link>v3\RazorGenerator.Core.V3.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\External\RazorGenerator.Core.v3\bin\Release\System.Web.Mvc.dll">
+      <Link>v3\System.Web.Mvc.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\External\RazorGenerator.Core.v3\bin\Release\System.Web.Razor.dll">
+      <Link>v3\System.Web.Razor.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\External\RazorGenerator.Core.v3\bin\Release\System.Web.WebPages.dll">
+      <Link>v3\System.Web.WebPages.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\External\RazorGenerator.Core.v3\bin\Release\System.Web.WebPages.Razor.dll">
+      <Link>v3\System.Web.WebPages.Razor.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
