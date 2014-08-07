@@ -13,6 +13,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".items", ".items", "{C0453777-9668-4754-925B-288263126ECA}"
 	ProjectSection(SolutionItems) = preProject
 		..\README.md = ..\README.md
+		addin-project.xml = addin-project.xml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{97C7D9D6-F86C-4F7D-A7A2-BE151A92D956}"
